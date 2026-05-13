@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallaby Wellness – Australia's Home for Shilajit, Superfoods & Ayurvedic Supplements</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #faf9f6;
+    color: #2a2a2a;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+    line-height: 1.85;
+    font-size: 17px;
+  }
+  .site-label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7a7a6a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .site-label::after { content: ''; flex: 1; height: 1px; background: #e0ddd4; }
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a18;
+    margin-bottom: 18px;
+  }
+  .byline {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #8a8a7a;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0ddd4;
+  }
+  .toc {
+    background: #f2f7f2;
+    border: 1px solid #c8deca;
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 44px;
+  }
+  .toc-title {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #2e5631;
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    margin: 0 0 0 18px;
+    padding: 0;
+  }
+  .toc li {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 7px;
+    color: #3a3a32;
+  }
+  .toc a { color: #4a7c4e; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a18;
+    margin: 52px 0 14px;
+    padding-top: 8px;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2d28;
+    margin: 32px 0 10px;
+  }
+  p { margin-bottom: 18px; color: #3a3a32; }
+  a { color: #4a7c4e; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #2e5631; }
+  .pull-quote {
+    border-left: 4px solid #6b9e6f;
+    padding: 16px 24px;
+    margin: 36px 0;
+    background: #f2f7f2;
+    font-size: 20px;
+    color: #2e5631;
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .collection-card {
+    background: #fff;
+    border: 1px solid #e0ddd4;
+    border-radius: 8px;
+    padding: 18px 16px;
+  }
+  .collection-card .icon { font-size: 22px; margin-bottom: 8px; }
+  .collection-card strong {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a18;
+    margin-bottom: 6px;
+  }
+  .collection-card p {
+    font-size: 13px;
+    color: #6a6a5a;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .highlight-box {
+    background: #eef4ee;
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .highlight-box p { margin-bottom: 0; }
+  ul { margin: 0 0 18px 24px; }
+  ul li { margin-bottom: 8px; color: #3a3a32; }
+  .divider { border: none; border-top: 1px solid #e0ddd4; margin: 52px 0; }
+
+  /* New section labels */
+  .expert-badge {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .badge-green { background: #d4edca; color: #2e5631; }
+  .badge-purple { background: #e8e4fc; color: #3c3489; }
+  .badge-amber { background: #faeeda; color: #633806; }
+  .badge-coral { background: #faece7; color: #712b13; }
+  .badge-teal { background: #e1f5ee; color: #085041; }
+
+  /* Myth/reality table */
+  .myth-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+  .myth-table th {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    text-align: left;
+  }
+  .myth-table th:first-child { background: #fde8e8; color: #8b2020; border-radius: 6px 0 0 0; }
+  .myth-table th:last-child { background: #d4edca; color: #2e5631; border-radius: 0 6px 0 0; }
+  .myth-table td { padding: 12px 16px; vertical-align: top; border-bottom: 1px solid #e8e5de; }
+  .myth-table td:first-child { color: #7a3030; font-style: italic; background: #fff8f8; width: 48%; }
+  .myth-table td:last-child { color: #2d4a2f; background: #f7fbf7; }
+
+  /* COA checklist */
+  .checklist { list-style: none; margin: 20px 0; padding: 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #e0ddd4;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #3a3a32;
+  }
+  .checklist li .check {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid #6b9e6f;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .checklist li strong { display: block; font-family: Arial, sans-serif; font-size: 13px; color: #1a1a18; margin-bottom: 2px; }
+  .checklist li span { font-size: 13px; color: #6a6a5a; }
+  .redflag { border-color: #f0b0b0 !important; background: #fff8f8 !important; }
+  .redflag .check { border-color: #cc4444 !important; }
+  .redflag strong { color: #8b2020 !important; }
+
+  /* Decision tree */
+  .decision-tree { margin: 24px 0; }
+  .dt-node {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .dt-question { background: #eef4ee; border-left: 4px solid #6b9e6f; color: #1a2e1c; }
+  .dt-yes { background: #f2f7f2; border-left: 4px solid #a8c8ab; color: #2d4a2f; padding-left: 32px; }
+  .dt-no { background: #fff8f2; border-left: 4px solid #d4956b; color: #4a2a14; padding-left: 32px; }
+  .dt-outcome { background: #fff; border: 1px solid #e0ddd4; color: #3a3a32; padding-left: 32px; }
+  .dt-label { font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; opacity: 0.6; }
+
+  /* Protocol stacks */
+  .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+  .stack-card {
+    background: #fff;
+    border: 1px solid #e0ddd4;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .stack-header { padding: 14px 16px; }
+  .stack-header.perf { background: #2e5631; }
+  .stack-header.cog { background: #3c3489; }
+  .stack-header.horm { background: #854f0b; }
+  .stack-header h4 { font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .stack-header span { font-size: 12px; opacity: 0.75; color: #fff; }
+  .stack-body { padding: 14px 16px; }
+  .stack-ingredient { font-family: Arial, sans-serif; font-size: 13px; color: #1a1a18; font-weight: 700; }
+  .stack-detail { font-size: 12px; color: #6a6a5a; margin-bottom: 8px; }
+
+  /* Reg table */
+  .reg-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+  .reg-table th { background: #2e5631; color: #fff; padding: 10px 14px; text-align: left; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
+  .reg-table td { padding: 10px 14px; border-bottom: 1px solid #e8e5de; vertical-align: top; color: #3a3a32; }
+  .reg-table tr:nth-child(even) td { background: #f7f5f0; }
+  .reg-table .good { color: #2e5631; font-weight: 700; }
+  .reg-table .warn { color: #854f0b; font-weight: 700; }
+  .reg-table .bad { color: #8b2020; font-weight: 700; }
+
+  .cta-block {
+    background: #2e5631;
+    color: #fff;
+    border-radius: 10px;
+    padding: 40px 36px;
+    margin-top: 56px;
+    text-align: center;
+  }
+  .cta-block h2 { color: #d4edca; margin-top: 0; font-size: 26px; }
+  .cta-block p { color: #b8d9b2; margin-bottom: 0; }
+  .cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #fff;
+    color: #2e5631;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 13px 36px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .note {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #7a7a6a;
+    background: #f7f5f0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-label">Health &amp; Wellness Australia</div>
+
+<h1>Wallaby Wellness: Australia's Most Trusted Source for Shilajit, Superfoods, and Ayurvedic Supplements</h1>
+
+<div class="byline">Published by the Wallaby Wellness editorial team &middot; Strathpine, QLD, Australia</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-title">In this article</div>
+  <ol>
+    <li><a href="#story">The Wallaby Wellness story</a></li>
+    <li><a href="#shilajit">The flagship: Shilajit</a></li>
+    <li><a href="#ayurvedic">Ayurvedic supplements: ancient science, modern delivery</a></li>
+    <li><a href="#superfoods">Superfoods: nutrient density you can taste</a></li>
+    <li><a href="#organic">Organic food: sourcing integrity at every level</a></li>
+    <li><a href="#adaptogens">Adaptogens: the science of stress resilience</a></li>
+    <li><a href="#protein">Protein bars and functional snacks</a></li>
+    <li><a href="#standout">Why Wallaby Wellness stands out</a></li>
+    <li><a href="#whofor">Who is Wallaby Wellness for?</a></li>
+    <li><a href="#tga">The Australian regulatory gap: what the TGA controls</a></li>
+    <li><a href="#myths">Myth vs reality: 7 things the supplement industry gets wrong</a></li>
+    <li><a href="#backfire">When natural supplements backfire</a></li>
+    <li><a href="#coa">How to read a Certificate of Analysis</a></li>
+    <li><a href="#stacking">Advanced stacking: practitioner-tier protocols</a></li>
+    <li><a href="#explore">Explore the full range</a></li>
+  </ol>
+</div>
+
+<p>Australians are increasingly turning away from synthetic vitamins and towards the ancient wisdom embedded in traditional plant medicine. From the remote Himalayan mountains to the lush soil of certified organic farms, the natural health movement is reshaping how people think about energy, immunity, and long-term wellness. At the heart of this shift in Australia is <a href="https://wallabywellness.com.au" target="_blank">Wallaby Wellness</a>   a Queensland-based e-commerce store dedicated to making premium, research-backed natural supplements accessible to every Australian.</p>
+
+<p>This article explores the full range of products and philosophy behind Wallaby Wellness, with an in-depth look at each of its core categories, why Australians are choosing natural alternatives, and what makes this store stand apart in a crowded wellness market.</p>
+
+<hr class="divider">
+
+<!-- SECTION 1 -->
+<h2 id="story">The Wallaby Wellness Story</h2>
+
+<p>Founded and operated out of Strathpine, Queensland, <a href="https://wallabywellness.com.au" target="_blank">Wallaby Wellness</a> was built on a single conviction: that the most powerful medicines on Earth aren't found in a laboratory   they've been growing in forests, mountains, and fertile soils for thousands of years. The store brings together a curated selection of Shilajit, Ayurvedic herbs, superfoods, and adaptogenic plants, sourced with strict attention to purity, potency, and sustainability.</p>
+
+<p>What sets Wallaby Wellness apart is the depth of its product philosophy. Every item stocked on the site has gone through careful research, with a focus on traditional use history, modern scientific validation, and sourcing transparency. The result is a wellness store that feels less like a retail catalogue and more like a trusted reference point for health-conscious Australians.</p>
+
+<div class="pull-quote">"We believe real health comes from real nature   unprocessed, undiluted, and unapologetically ancient."</div>
+
+<hr class="divider">
+
+<!-- SECTION 2 -->
+<h2 id="shilajit">The Flagship: Shilajit</h2>
+
+<p>If there is one product that defines Wallaby Wellness, it is Shilajit. This rare, tar-like resin forms over centuries as plant matter decomposes under the pressure of Himalayan rock   the result is one of nature's most mineral-dense substances, used for over 3,000 years in Ayurvedic medicine as a rejuvenator, energy enhancer, and longevity tonic.</p>
+
+<p>Wallaby Wellness carries an exceptional range of <a href="https://wallabywellness.com.au/collections/shilajit" target="_blank">Shilajit products</a> in multiple forms   including pure resin, powder, and capsules   all sourced from high-altitude Himalayan origins and tested for heavy metals, purity, and authentic fulvic acid content.</p>
+
+<h3>Why Australians Are Searching for Shilajit</h3>
+
+<p>Google search data tells a clear story: Australians are searching for "shilajit australia" in growing numbers every month. Interest is driven by awareness of Shilajit's most studied benefits:</p>
+
+<ul>
+  <li>Natural energy and mitochondrial support through fulvic acid</li>
+  <li>Testosterone and hormonal balance in men</li>
+  <li>Iron absorption and anaemia support</li>
+  <li>Cognitive function and memory enhancement</li>
+  <li>Anti-inflammatory and antioxidant properties</li>
+</ul>
+
+<p>With an unregulated grey market selling diluted or adulterated Shilajit online, Australians searching for a reliable source are finding Wallaby Wellness as one of the few stores offering lab-tested, authentic product. The store's <a href="https://wallabywellness.com.au/collections/shilajit" target="_blank">Shilajit collection</a> is the go-to destination for buyers who want the genuine article.</p>
+
+<hr class="divider">
+
+<!-- SECTION 3 -->
+<h2 id="ayurvedic">Ayurvedic Supplements: Ancient Science, Modern Delivery</h2>
+
+<p>Ayurveda   the 5,000-year-old Indian system of natural healing   is having a global renaissance. At Wallaby Wellness, the <a href="https://wallabywellness.com.au/collections/ayurvedic-supplements" target="_blank">Ayurvedic supplements collection</a> brings together the most well-researched herbs from this tradition, including Ashwagandha, Triphala, Brahmi, Shatavari, and many more.</p>
+
+<p>These herbs are not trends. Each has centuries of documented use in classical Ayurvedic texts like the Charaka Samhita and Sushruta Samhita, and many are now backed by peer-reviewed research confirming their adaptogenic, neuroprotective, and anti-inflammatory properties.</p>
+
+<div class="highlight-box">
+  <p>Ashwagandha (Withania somnifera)   arguably the world's most well-studied adaptogen   has shown in multiple clinical trials to significantly reduce cortisol levels, improve sleep quality, and enhance physical endurance. Wallaby Wellness stocks premium-grade Ashwagandha in forms that prioritise bioavailability and potency.</p>
+</div>
+
+<p>The Wallaby Wellness Ayurvedic range is particularly relevant for Australians experiencing chronic stress, fatigue, hormonal imbalance, and cognitive fog   conditions that are increasingly common in modern life and poorly addressed by conventional medicine alone.</p>
+
+<hr class="divider">
+
+<!-- SECTION 4 -->
+<h2 id="superfoods">Superfoods: Nutrient Density You Can Taste</h2>
+
+<p>The term "superfood" is often overused, but at Wallaby Wellness, it carries real weight. The store's <a href="https://wallabywellness.com.au/collections/superfoods" target="_blank">superfoods collection</a> is built around foods with exceptionally high concentrations of vitamins, minerals, antioxidants, and phytonutrients   ingredients that function as both food and medicine.</p>
+
+<p>From spirulina and chlorella to cacao, moringa, and maca, these are ingredients that nutritionists, naturopaths, and integrative health practitioners reach for when they want to address nutrient deficiencies at the root cause rather than treating symptoms in isolation.</p>
+
+<h3>Why Whole-Food Nutrition Matters</h3>
+
+<p>Synthetic vitamins and isolated minerals have their place, but the research increasingly supports the superiority of whole-food-based nutrition   where nutrients appear alongside their natural cofactors and are therefore more bioavailable and functional. Superfoods represent this philosophy in concentrated form: real food, real nutrients, real results.</p>
+
+<hr class="divider">
+
+<!-- SECTION 5 -->
+<h2 id="organic">Organic Food: Sourcing Integrity at Every Level</h2>
+
+<p>A wellness brand is only as trustworthy as its supply chain. Wallaby Wellness understands this, and its commitment to certified organic sourcing is central to the brand's identity. The <a href="https://wallabywellness.com.au/collections/organic-food" target="_blank">organic food collection</a> includes pantry staples, snack foods, and functional ingredients that are free from synthetic pesticides, herbicides, and chemical processing agents.</p>
+
+<p>In an era when "natural" labelling is poorly regulated and greenwashing is rampant, the organic certification on Wallaby Wellness products offers a meaningful assurance. Customers know they are getting what the label says   nothing more, nothing less.</p>
+
+<hr class="divider">
+
+<!-- SECTION 6 -->
+<h2 id="adaptogens">Adaptogens: The Science of Stress Resilience</h2>
+
+<p>Adaptogens are a class of herbs and botanicals with a unique functional property: they help the body adapt to physical, mental, and environmental stress by modulating the hypothalamic-pituitary-adrenal (HPA) axis and supporting homeostasis. The category has moved from alternative medicine curiosity to mainstream acceptance, with leading research institutions studying herbs like Rhodiola rosea, Holy Basil (Tulsi), and Eleuthero in rigorous clinical settings.</p>
+
+<p>Wallaby Wellness has built one of the most comprehensive <a href="https://wallabywellness.com.au/collections/adaptogens" target="_blank">adaptogen collections</a> available to Australian consumers. Whether you're an athlete trying to reduce recovery time, a professional managing work-related stress, or someone navigating hormonal transitions, the adaptogen range offers targeted, evidence-informed options.</p>
+
+<div class="collection-grid">
+  <div class="collection-card">
+    <div class="icon">🌿</div>
+    <strong>Rhodiola Rosea</strong>
+    <p>Enhances mental performance and reduces fatigue under stress.</p>
+  </div>
+  <div class="collection-card">
+    <div class="icon">🌼</div>
+    <strong>Holy Basil (Tulsi)</strong>
+    <p>Lowers cortisol, supports blood sugar balance and immunity.</p>
+  </div>
+  <div class="collection-card">
+    <div class="icon">🍄</div>
+    <strong>Medicinal Mushrooms</strong>
+    <p>Lion's Mane, Reishi, and Chaga for cognitive and immune support.</p>
+  </div>
+  <div class="collection-card">
+    <div class="icon">🌱</div>
+    <strong>Ashwagandha</strong>
+    <p>Clinically studied for stress, testosterone, and endurance support.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 7 -->
+<h2 id="protein">Protein Bars and Functional Snacks</h2>
+
+<p>Wellness doesn't stop at supplements. Wallaby Wellness also stocks a carefully curated selection of <a href="https://wallabywellness.com.au/collections/protein-bars" target="_blank">protein bars and functional snacks</a> for people who want clean nutrition on the go. These are products made with real, recognisable ingredients   free from artificial sweeteners, refined sugars, and synthetic flavourings that dominate the conventional snack food market.</p>
+
+<p>For athletes, busy professionals, or anyone looking for a convenient and genuinely nutritious snack option, this collection offers choices that align with a whole-food philosophy without sacrificing taste or portability.</p>
+
+<hr class="divider">
+
+<!-- SECTION 8 -->
+<h2 id="standout">Why Wallaby Wellness Stands Out in the Australian Market</h2>
+
+<p>The Australian natural health supplement market is large and growing, but it is also cluttered with products that overpromise and underdeliver. Wallaby Wellness has positioned itself differently, and several factors explain why it has become a trusted name among health-conscious Australians:</p>
+
+<ul>
+  <li><strong>Sourcing transparency:</strong> Products are traced to their origins, with particular attention to Shilajit and Ayurvedic herbs sourced from authentic, high-quality regions.</li>
+  <li><strong>Purity standards:</strong> No filler ingredients, synthetic binders, or artificial additives. What you see on the label is what you get.</li>
+  <li><strong>Range depth:</strong> From niche Ayurvedic herbs to globally recognised superfoods, the <a href="https://wallabywellness.com.au" target="_blank">Wallaby Wellness catalogue</a> covers the breadth of natural wellness.</li>
+  <li><strong>Australian-focused:</strong> Based in Queensland and shipping nationally, the store understands the Australian health consumer and provides fast, reliable fulfilment across the country.</li>
+  <li><strong>Educational approach:</strong> The store's content philosophy puts customer education at the centre, helping shoppers understand not just what to buy, but why it works.</li>
+</ul>
+
+<hr class="divider">
+
+<!-- SECTION 9 -->
+<h2 id="whofor">Who Is Wallaby Wellness For?</h2>
+
+<p>Wallaby Wellness serves a wide but specific audience: Australians who have moved beyond the passive approach to health and are taking active, informed steps to support their energy, cognition, immunity, and longevity. This includes:</p>
+
+<ul>
+  <li>Men and women seeking natural hormone balance and energy support</li>
+  <li>Athletes and fitness enthusiasts looking for clean performance nutrition</li>
+  <li>Professionals managing high stress and cognitive load</li>
+  <li>Health-conscious parents wanting clean, organic food options for their families</li>
+  <li>Anyone curious about Ayurveda, adaptogens, and traditional medicine</li>
+</ul>
+
+<p>Whether you are entirely new to natural health or a long-time practitioner of integrative wellness, the store is structured to guide you clearly   from introductory products through to advanced supplementation protocols.</p>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- NEW EXPERT SECTION 1: TGA REGULATORY GAP -->
+<!-- ============================================================ -->
+<h2 id="tga">The Australian Regulatory Gap: What the TGA Does   and Doesn't   Control About Shilajit and Ayurvedic Supplements</h2>
+
+<div class="expert-badge badge-green">Australian Market Insight</div>
+
+<p>Most supplement information published online is written for a global audience and ignores the specific legal and regulatory environment that governs what Australians can buy, what claims can be made, and what buyer protections actually exist. Understanding how the Therapeutic Goods Administration (TGA) works is one of the most practically useful things an Australian supplement buyer can know   and it's almost never explained.</p>
+
+<h3>TGA Listed vs Registered vs Unregulated: What the Difference Actually Means</h3>
+
+<p>The TGA operates the Australian Register of Therapeutic Goods (ARTG), which divides therapeutic products into two tiers. "Listed" medicines (identifiable by an AUST L or AUST L(A) number on the label) are assessed for safety and quality, but the TGA does not evaluate whether they actually work. "Registered" medicines (AUST R) undergo a full efficacy evaluation   this is the standard applied to pharmaceuticals.</p>
+
+<p>The vast majority of Shilajit, Ayurvedic herbs, and superfoods on the Australian market are either Listed medicines or fall under a food/ingredient classification entirely. This means a product can carry the AUST L number, be legally sold in Australia, and have never been independently tested by the TGA for whether the active compound percentage on the label is accurate.</p>
+
+<p>This is not a criticism of the system   it reflects how the TGA appropriately scales its resources. But it does mean that for the supplement category, the brand's own sourcing rigour and third-party testing practices matter far more than any government approval number alone.</p>
+
+<table class="reg-table">
+  <thead>
+    <tr>
+      <th>Product Type</th>
+      <th>TGA Classification</th>
+      <th>Safety Assessed?</th>
+      <th>Efficacy Assessed?</th>
+      <th>Label Accuracy Verified?</th>
+      <th>Buyer Risk Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Registered medicines (pharmaceuticals)</td>
+      <td>AUST R</td>
+      <td class="good">Yes</td>
+      <td class="good">Yes</td>
+      <td class="good">Yes</td>
+      <td class="good">Low</td>
+    </tr>
+    <tr>
+      <td>Listed complementary medicines (most supplements)</td>
+      <td>AUST L / AUST L(A)</td>
+      <td class="good">Yes</td>
+      <td class="warn">No</td>
+      <td class="warn">Brand responsibility</td>
+      <td class="warn">Medium   brand dependent</td>
+    </tr>
+    <tr>
+      <td>Grey market imports (Amazon AU, unbranded sellers)</td>
+      <td>None / Food classification</td>
+      <td class="bad">No</td>
+      <td class="bad">No</td>
+      <td class="bad">No</td>
+      <td class="bad">High</td>
+    </tr>
+    <tr>
+      <td>Certified organic listed supplements (Wallaby Wellness)</td>
+      <td>AUST L + organic cert</td>
+      <td class="good">Yes</td>
+      <td class="warn">Brand-verified</td>
+      <td class="good">Third-party COA</td>
+      <td class="good">Low   highest buyer protection</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>The Grey Market Import Problem Australians Don't Know About</h3>
+
+<p>A significant volume of Shilajit and Ayurvedic herbs sold to Australian consumers through international marketplaces enters the country under food or cosmetic classifications rather than as therapeutic goods. This is not just a technicality   it means the product has bypassed the TGA's quality and safety framework entirely. There is no ARTG number, no labelling compliance requirement, and no recourse for the buyer if the product is contaminated, mislabelled, or ineffective.</p>
+
+<p>The practical risk is real. Independent testing of Shilajit products purchased from grey-market online sources has found wide variation in fulvic acid content, and some samples have shown heavy metal levels inconsistent with safe therapeutic use. Buying from an Australian-based brand like <a href="https://wallabywellness.com.au" target="_blank">Wallaby Wellness</a> that operates within the TGA framework and publishes Certificates of Analysis is a meaningful quality differentiator   not just a marketing claim.</p>
+
+<h3>What to Look for on Every Australian Supplement Label</h3>
+
+<ul>
+  <li>An AUST L or AUST R number confirming TGA registration</li>
+  <li>Country of origin for the active ingredient (not just the brand's country)</li>
+  <li>Batch number   which allows traceability to specific testing records</li>
+  <li>A clear active compound declaration (e.g., "minimum 60% fulvic acid" for Shilajit)</li>
+  <li>Either a NATA-accredited lab reference or a COA available on the brand's website</li>
+</ul>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- NEW EXPERT SECTION 2: MYTH VS REALITY -->
+<!-- ============================================================ -->
+<h2 id="myths">Myth vs Reality: 7 Things the Supplement Industry Gets Completely Wrong About Adaptogens and Shilajit</h2>
+
+<div class="expert-badge badge-purple">Myth vs Reality</div>
+
+<p>The natural supplement industry has a complex relationship with accuracy. On one side, legitimate science supports many of the benefits attributed to Shilajit, Ayurvedic herbs, and adaptogens. On the other, the marketing incentive to overclaim is strong   and many buyers are left with distorted expectations, poor purchasing decisions, or worse, real health consequences from misleading information.</p>
+
+<p>What follows is an honest account of where common wisdom in this space is accurate, where it is oversimplified, and where it is simply wrong.</p>
+
+<table class="myth-table">
+  <thead>
+    <tr>
+      <th>The Myth</th>
+      <th>The Reality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>"All Shilajit is the same   it's just a rock resin."</td>
+      <td>Altitude of collection, seasonal harvesting timing, purification method (sun-purified vs solvent-extracted), and fulvic acid percentage vary enormously between sources. Two products both labelled "Himalayan Shilajit" can have fundamentally different bioactive profiles. Fulvic acid content can range from under 10% in poor-quality product to over 60% in premium resin. This single variable accounts for most of the difference between a product that works and one that does nothing.</td>
+    </tr>
+    <tr>
+      <td>"Adaptogens work immediately   you'll feel it within days."</td>
+      <td>Most clinical evidence for adaptogens like Ashwagandha shows measurable effects at 8 to 12 weeks of consistent use. The mechanism of action   HPA axis modulation and cortisol pathway recalibration   is not an acute pharmacological effect. It is a gradual physiological adaptation. Brands that promise "feel it in 3 days" are misrepresenting the mechanism and setting up buyers for disappointment and early discontinuation.</td>
+    </tr>
+    <tr>
+      <td>"More superfoods equals more health benefits."</td>
+      <td>Spirulina and chlorella at very high doses from contaminated sources carry documented heavy metal accumulation risks. Excessive green superfood intake can disrupt thyroid function in iodine-sensitive individuals. Every bioactive compound has a dose-response curve   benefits plateau and risks emerge at excessive doses. The research rarely makes the packaging.</td>
+    </tr>
+    <tr>
+      <td>"Organic certification means the supplement is pure and safe."</td>
+      <td>Certified organic means no synthetic pesticides during cultivation   nothing more. It says nothing about heavy metal content from soil geology, mycotoxin presence from storage conditions, or post-harvest contamination during processing. A supplement can be certified organic and still fail a heavy metals safety screen. Independent third-party COA testing is an entirely separate and stronger quality signal that organic certification does not replace.</td>
+    </tr>
+    <tr>
+      <td>"Ayurvedic herbs are mild and safe for everyone."</td>
+      <td>Several Ayurvedic herbs have documented pharmaceutical interactions. Ashwagandha can potentiate thyroid medication and should be used cautiously in hyperthyroid conditions. Brahmi (Bacopa) can interact with anticholinergic drugs and sedatives. Triphala has documented anticoagulant properties relevant to anyone on blood thinners. "Natural" does not mean pharmacologically inert.</td>
+    </tr>
+    <tr>
+      <td>"If it's sold in Australia, it's been tested and approved."</td>
+      <td>As detailed in the TGA section above, Listed medicines are assessed for safety of ingredients but not for efficacy or label accuracy at a batch level. Grey market products bypass this entirely. The TGA framework provides a meaningful baseline, but buyer-level due diligence   including checking for COAs   remains essential in the supplement category.</td>
+    </tr>
+    <tr>
+      <td>"Higher fulvic acid percentage always means better Shilajit."</td>
+      <td>Fulvic acid is the primary bioactive marker, but genuine Shilajit also contains over 80 trace minerals, dibenzo-alpha-pyrones, and humic acids that contribute to its therapeutic profile. A purified extract standardised to 80% fulvic acid may actually have fewer co-factors than a well-sourced 50% resin. Whole-matrix integrity matters as much as the headline percentage   a nuance that pure fulvic acid extract marketers consistently obscure.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- NEW EXPERT SECTION 3: WHEN IT BACKFIRES -->
+<!-- ============================================================ -->
+<h2 id="backfire">When Natural Supplements Backfire: The "It Depends" Guide to Shilajit, Adaptogens, and Superfoods</h2>
+
+<div class="expert-badge badge-coral">Edge Cases &amp; Exceptions</div>
+
+<p>Responsible natural wellness is not a one-size-fits-all prescription. The same herb or supplement that produces remarkable results in one person can be counterproductive   or in specific circumstances, harmful   in another. This section is not designed to discourage supplement use. It is designed to ensure that the decision to use any supplement is an informed one, made with awareness of the individual variables that change outcomes.</p>
+
+<p>What follows is an honest, clinically grounded look at the scenarios where common natural health advice does not apply, and what to do differently when you find yourself in one of them.</p>
+
+<h3>Shilajit and Iron Overload</h3>
+
+<p>Shilajit's fulvic acid is one of the most effective natural enhancers of iron absorption known to traditional medicine   which is one reason it is traditionally recommended for anaemia and fatigue. However, this same mechanism makes it potentially problematic for individuals with haemochromatosis (hereditary iron overload disorder), or anyone with elevated ferritin levels detected in routine blood work.</p>
+
+<p>Enhanced iron absorption in an already iron-overloaded individual can accelerate organ damage over time. Anyone with a family history of haemochromatosis or who has received high ferritin results on a blood panel should confirm their iron status before introducing Shilajit, regardless of how otherwise healthy the product is.</p>
+
+<h3>Adaptogens and Autoimmune Conditions</h3>
+
+<p>Many of the most popular adaptogens   Ashwagandha, Reishi mushroom, Eleuthero, and certain medicinal mushrooms   are classified as immunomodulatory. In healthy individuals, this immune system support is beneficial. In individuals with autoimmune conditions such as Hashimoto's thyroiditis, rheumatoid arthritis, lupus, or multiple sclerosis, immune stimulation can trigger or intensify flare-ups rather than resolve them.</p>
+
+<p>This is one of the most consistently ignored contraindications in the adaptogen category. Reishi, in particular, is widely marketed for its immune benefits without adequate warnings for the autoimmune population. Anyone managing an autoimmune condition should consult a qualified practitioner before using adaptogenic herbs, particularly those with strong immunostimulant properties.</p>
+
+<h3>High-Dose Superfoods and Gut Disruption</h3>
+
+<p>Introducing large quantities of green superfood powders   spirulina, chlorella, wheatgrass, barley grass   too quickly can rapidly shift gut bacteria populations. In individuals with pre-existing gut dysbiosis, SIBO, or compromised intestinal permeability, this can produce significant temporary symptoms: bloating, loose stools, fatigue, and what is colloquially referred to as a "detox reaction." These symptoms are not always detoxification   they can indicate that the gut microbiome has been disrupted faster than it can adapt.</p>
+
+<p>Starting at one-quarter of the recommended dose and increasing gradually over 3 to 4 weeks is the practitioner-standard approach for introducing superfoods to a sensitive gut. This is almost never communicated on product packaging.</p>
+
+<!-- Decision tree -->
+<h3>Should I Take This? A Quick Decision Guide</h3>
+
+<div class="decision-tree">
+  <div class="dt-node dt-question"><div class="dt-label">Start here</div>Do you have any diagnosed health condition or take prescription medication?</div>
+  <div class="dt-node dt-yes"><div class="dt-label">Yes</div>Consult your GP or integrative practitioner before starting any adaptogen, Shilajit, or medicinal mushroom. Specific interactions exist for thyroid medication, blood thinners, sedatives, and immunosuppressants.</div>
+  <div class="dt-node dt-no"><div class="dt-label">No diagnosed condition</div>Proceed to next question.</div>
+  <div class="dt-node dt-question"><div class="dt-label">Next</div>Do you have a history of digestive issues, IBS, bloating, or food sensitivities?</div>
+  <div class="dt-node dt-yes"><div class="dt-label">Yes</div>Start all superfoods and herbal supplements at 25% of the recommended dose and increase slowly over 3 to 4 weeks. Prioritise gut-supportive foods first (prebiotic fibres, fermented foods) before introducing concentrated bioactives.</div>
+  <div class="dt-node dt-no"><div class="dt-label">No gut issues</div>Standard dosing applies. Begin at the recommended dose and assess response at 4 weeks before adjusting.</div>
+  <div class="dt-node dt-question"><div class="dt-label">For women</div>Are you pregnant or breastfeeding?</div>
+  <div class="dt-node dt-yes"><div class="dt-label">Yes</div>Most Ayurvedic herbs and adaptogens lack adequate safety data for pregnancy. Shatavari is an exception with traditional use in women's reproductive health, but all herbal supplements during pregnancy should be approved by a qualified health provider.</div>
+  <div class="dt-node dt-outcome"><div class="dt-label">General guidance</div>No specific contraindication identified. Choose third-party tested products with COA (see below) and begin conservatively.</div>
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- NEW EXPERT SECTION 4: HOW TO READ A COA -->
+<!-- ============================================================ -->
+<h2 id="coa">How to Read a Certificate of Analysis: The Quality Verification Skill Every Supplement Buyer in Australia Needs</h2>
+
+<div class="expert-badge badge-amber">Industry Insider Knowledge</div>
+
+<p>A Certificate of Analysis (COA) is the single most important quality document in the supplement industry   and it is almost never explained to consumers. Most buyers see the words "third-party tested" on a product page and accept it at face value. Experienced practitioners, formulators, and quality assurance professionals know there is enormous variation in what COA testing actually covers, who conducts it, and what a result actually means.</p>
+
+<p>Understanding how to read and evaluate a COA turns you from a passive consumer into an informed buyer. It takes less than two minutes once you know what to look for.</p>
+
+<h3>The Four Non-Negotiable Tests Every Supplement COA Should Show</h3>
+
+<ul class="checklist">
+  <li>
+    <div class="check"></div>
+    <div><strong>Active compound percentage</strong><span>For Shilajit: minimum fulvic acid percentage (reputable products typically 40–60%+ for resin). For Ayurvedic herbs: active constituent declaration (e.g., withanolides in Ashwagandha, bacosides in Brahmi). A COA that does not test for the primary active is not a meaningful quality document.</span></div>
+  </li>
+  <li>
+    <div class="check"></div>
+    <div><strong>Heavy metals panel</strong><span>At minimum: lead, arsenic, mercury, and cadmium. Results should be measured against either the Australian TGA limits or the US Pharmacopeia (USP) dietary supplement guidelines   both are internationally accepted safety benchmarks. A COA listing "tested" without showing actual results against a reference standard is not adequate.</span></div>
+  </li>
+  <li>
+    <div class="check"></div>
+    <div><strong>Microbial safety testing</strong><span>Should include: total aerobic plate count, E. coli, Salmonella, Staphylococcus aureus, and yeast/mould counts. Earthy, mineral-rich products like Shilajit are particularly susceptible to microbial contamination if improperly processed or stored   this panel is not optional.</span></div>
+  </li>
+  <li>
+    <div class="check"></div>
+    <div><strong>Pesticide residue screen</strong><span>A pesticide screen confirms that no synthetic agricultural chemicals are present above safe limits. Particularly relevant for Ayurvedic herbs grown in regions with different agricultural regulations than Australia. Organic certification reduces this risk but does not replace direct testing.</span></div>
+  </li>
+</ul>
+
+<h3>Red Flags That Mean a COA Should Not Be Trusted</h3>
+
+<ul class="checklist">
+  <li class="redflag">
+    <div class="check"></div>
+    <div><strong>No batch number on the COA</strong><span>If the COA does not carry a specific batch number matching the product you purchased, it may have been tested once at launch and never re-tested. Per-batch testing is the gold standard. A single "master" COA for a product line is a significant quality red flag.</span></div>
+  </li>
+  <li class="redflag">
+    <div class="check"></div>
+    <div><strong>No accredited laboratory identification</strong><span>Any legitimate COA will identify the testing laboratory by name and, in Australia, should reference a NATA-accredited (National Association of Testing Authorities) facility. In the US, ISO 17025-accredited labs are equivalent. A COA from an unidentifiable or in-house lab carries no independent weight.</span></div>
+  </li>
+  <li class="redflag">
+    <div class="check"></div>
+    <div><strong>COA tests only one marker</strong><span>A COA that only confirms fulvic acid percentage while skipping heavy metals, microbial, and pesticide panels is testing for marketing purposes, not safety. This is more common than buyers realise and is designed to create the appearance of quality assurance without its substance.</span></div>
+  </li>
+  <li class="redflag">
+    <div class="check"></div>
+    <div><strong>COA is not publicly available or requires a request</strong><span>A brand confident in its testing makes COAs accessible without friction   on the product page or available for download without needing to contact customer service. Reluctance to share testing documentation should prompt serious questions about what the testing actually found.</span></div>
+  </li>
+</ul>
+
+<div class="note">In Australia, look for NATA (National Association of Testing Authorities) accreditation on any testing laboratory referenced in a COA. NATA accreditation is the Australian standard for laboratory competence and is the equivalent of ISO 17025 internationally. A NATA-accredited result provides a meaningful independent quality assurance that a non-accredited in-house result does not.</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!-- NEW EXPERT SECTION 5: ADVANCED STACKING -->
+<!-- ============================================================ -->
+<h2 id="stacking">Advanced Stacking: How Experienced Practitioners Build Synergistic Supplement Protocols Using Shilajit, Adaptogens, and Superfoods</h2>
+
+<div class="expert-badge badge-teal">Advanced   For Experienced Users</div>
+
+<p>This section is not for beginners. If you are new to natural supplements, start with the foundational guidance earlier in this article and allow your body 8 to 12 weeks to establish a baseline response before adding complexity. What follows is practitioner-tier information for readers who already understand the basics and are ready to think about synergy, timing, cycling, and protocol design.</p>
+
+<h3>The Shilajit Base Layer Principle</h3>
+
+<p>Shilajit's fulvic acid has a documented mechanism of action that makes it uniquely suited to serve as a base layer in any supplement protocol: it enhances cellular membrane permeability and nutrient transport, effectively increasing the bioavailability of compounds taken alongside it. This is not speculative   it is the mechanistic rationale behind traditional Ayurvedic Anupana (carrier) practices, where Shilajit was mixed with other herbs specifically to amplify their uptake.</p>
+
+<p>In practical terms, this means that CoQ10, B-vitamins, magnesium, and other micronutrients taken with Shilajit may reach target cells at higher effective concentrations than when taken alone. For practitioners building performance or longevity protocols, Shilajit is therefore most valuable not just as a standalone supplement but as the foundation of a broader stack.</p>
+
+<h3>The Cortisol Timing Problem</h3>
+
+<p>One of the most common and completely avoidable mistakes in adaptogen use is taking all adaptogens at the same time of day regardless of their mechanism of action. Adaptogens are not uniform   they interact with the cortisol awakening response (CAR) in different directions and at different phases of the diurnal cycle.</p>
+
+<p>Energy-supportive adaptogens   Rhodiola rosea and Eleuthero in particular   are best taken in the morning, timed to support the natural cortisol peak between 6am and 9am. Taking these in the evening can interfere with sleep onset and cortisol suppression. Cortisol-lowering adaptogens   Ashwagandha and Reishi   are best taken in the evening, 1 to 2 hours before sleep, when they support the natural cortisol decline that facilitates deep sleep and overnight recovery. Getting this timing wrong explains why many experienced users report suboptimal results from otherwise high-quality products.</p>
+
+<h3>Cycling to Maintain Sensitivity</h3>
+
+<p>Unlike pharmaceutical drugs, many adaptogens are traditionally used in cycles rather than continuously   and the traditional wisdom has a plausible biological basis. Continuous use of receptor-modulating compounds can produce adaptive downregulation: the body compensates for persistent stimulation by reducing receptor sensitivity, gradually diminishing the response over time.</p>
+
+<p>The standard practitioner cycling approach is 6 to 8 weeks of consistent use followed by a 2-week break. During the break, the receptor sensitivity resets and the next cycle typically produces a response comparable to the first. Continuous use without cycling is the most common reason experienced users report their adaptogens "stopped working."</p>
+
+<h3>Three Practitioner-Tier Stacking Protocols</h3>
+
+<div class="stack-grid">
+  <div class="stack-card">
+    <div class="stack-header perf">
+      <h4>Performance &amp; Recovery Stack</h4>
+      <span>For athletes and high-output individuals</span>
+    </div>
+    <div class="stack-body">
+      <div class="stack-ingredient">Shilajit resin (base layer)</div>
+      <div class="stack-detail">Morning, with warm water. 300–500mg. Fulvic acid transport base for co-supplements.</div>
+      <div class="stack-ingredient">Rhodiola Rosea</div>
+      <div class="stack-detail">Morning only. 200–400mg standardised extract. Do not take past midday.</div>
+      <div class="stack-ingredient">Spirulina</div>
+      <div class="stack-detail">Morning with food. 3–5g. Iron, B12, complete amino acid profile.</div>
+      <div class="stack-ingredient">Maca Root</div>
+      <div class="stack-detail">Pre-training or morning. 1.5–3g. Endurance and hormonal support.</div>
+      <div class="stack-detail" style="margin-top:10px;padding-top:10px;border-top:1px solid #e8e5de"><strong style="font-family:Arial;font-size:12px;color:#1a1a18">Cycle:</strong> 8 weeks on, 2 weeks off</div>
+    </div>
+  </div>
+  <div class="stack-card">
+    <div class="stack-header cog">
+      <h4>Cognitive Focus Stack</h4>
+      <span>For focus, memory, and mental clarity</span>
+    </div>
+    <div class="stack-body">
+      <div class="stack-ingredient">Shilajit resin (base layer)</div>
+      <div class="stack-detail">Morning. 300mg. CoQ10-synergy for mitochondrial energy in neurons.</div>
+      <div class="stack-ingredient">Lion's Mane mushroom</div>
+      <div class="stack-detail">Morning with food. 500mg–1g extract. NGF stimulation for neuroplasticity.</div>
+      <div class="stack-ingredient">Brahmi (Bacopa)</div>
+      <div class="stack-detail">With largest meal of the day (fat-soluble). 300mg standardised. Memory consolidation.</div>
+      <div class="stack-ingredient">Moringa leaf</div>
+      <div class="stack-detail">Morning. 2–3g. Broad-spectrum micronutrient base, anti-inflammatory.</div>
+      <div class="stack-detail" style="margin-top:10px;padding-top:10px;border-top:1px solid #e8e5de"><strong style="font-family:Arial;font-size:12px;color:#1a1a18">Cycle:</strong> 6 weeks on, 2 weeks off</div>
+    </div>
+  </div>
+  <div class="stack-card">
+    <div class="stack-header horm">
+      <h4>Hormonal Balance Stack</h4>
+      <span>For stress, sleep, and hormonal support</span>
+    </div>
+    <div class="stack-body">
+      <div class="stack-ingredient">Ashwagandha (KSM-66)</div>
+      <div class="stack-detail">Evening, 1–2hrs before bed. 300–600mg. Cortisol reduction, sleep quality.</div>
+      <div class="stack-ingredient">Shatavari</div>
+      <div class="stack-detail">Morning and evening. 500mg each dose. Oestrogen modulation and adrenal support.</div>
+      <div class="stack-ingredient">Maca Root</div>
+      <div class="stack-detail">Morning. 2–3g. Endocrine system support, libido, and energy without cortisol stimulation.</div>
+      <div class="stack-ingredient">Raw Cacao</div>
+      <div class="stack-detail">Afternoon. 10–15g. Magnesium, theobromine, anandamide precursors for mood regulation.</div>
+      <div class="stack-detail" style="margin-top:10px;padding-top:10px;border-top:1px solid #e8e5de"><strong style="font-family:Arial;font-size:12px;color:#1a1a18">Cycle:</strong> 8 weeks on, 2 weeks off</div>
+    </div>
+  </div>
+</div>
+
+<div class="note"><strong>Important:</strong> These protocols represent general practitioner-tier frameworks, not personalised medical advice. Individual response to supplements varies significantly based on health status, genetics, body weight, and co-existing conditions. If you are managing any health condition or taking medication, discuss supplement protocols with a qualified integrative health practitioner before proceeding.</div>
+
+<hr class="divider">
+
+<!-- EXPLORE SECTION -->
+<h2 id="explore">Explore the Full Wallaby Wellness Range</h2>
+
+<div class="collection-grid">
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/shilajit" target="_blank">Shilajit</a></strong>
+    <p>Authentic Himalayan Shilajit resin, powder, and capsules   lab-tested for fulvic acid and heavy metals.</p>
+  </div>
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/ayurvedic-supplements" target="_blank">Ayurvedic Supplements</a></strong>
+    <p>Ashwagandha, Brahmi, Triphala, Shatavari, and more from the classical Ayurvedic tradition.</p>
+  </div>
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/superfoods" target="_blank">Superfoods</a></strong>
+    <p>Spirulina, moringa, cacao, maca, and other nutrient-dense whole foods.</p>
+  </div>
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/organic-food" target="_blank">Organic Food</a></strong>
+    <p>Certified organic pantry staples and functional foods, free from synthetic additives.</p>
+  </div>
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/adaptogens" target="_blank">Adaptogens</a></strong>
+    <p>Rhodiola, Holy Basil, Eleuthero, and medicinal mushrooms for stress resilience.</p>
+  </div>
+  <div class="collection-card">
+    <strong><a href="https://wallabywellness.com.au/collections/protein-bars" target="_blank">Protein Bars</a></strong>
+    <p>Clean, functional snacks with real ingredients for active, health-conscious lifestyles.</p>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Discover Wallaby Wellness</h2>
+  <p>Australia's destination for Shilajit, Ayurvedic supplements, superfoods, and organic nutrition.<br>Sourced for purity. Shipped from Queensland to anywhere in Australia.</p>
+  <a href="https://wallabywellness.com.au" target="_blank" class="cta-btn">Visit Wallaby Wellness &rarr;</a>
+</div>
+
+</body>
+</html>
