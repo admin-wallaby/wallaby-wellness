@@ -274,6 +274,122 @@
     margin: 20px 0;
     line-height: 1.6;
   }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  /* ── Tablet: 600px–819px ── */
+  @media (max-width: 819px) {
+    body { padding: 36px 24px 64px; font-size: 16px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 22px; margin: 40px 0 12px; }
+    h3 { font-size: 18px; }
+    .pull-quote { font-size: 17px; padding: 14px 18px; }
+    .toc { padding: 18px 20px; }
+    .cta-block { padding: 28px 24px; }
+    .cta-block h2 { font-size: 22px; }
+  }
+
+  /* ── Mobile: up to 599px ── */
+  @media (max-width: 599px) {
+    body { padding: 24px 16px 48px; font-size: 15px; line-height: 1.8; }
+    h1 { font-size: 24px; line-height: 1.25; }
+    h2 { font-size: 20px; margin: 36px 0 10px; }
+    h3 { font-size: 17px; margin: 24px 0 8px; }
+    .byline { font-size: 12px; margin-bottom: 28px; padding-bottom: 18px; }
+    .pull-quote { font-size: 16px; padding: 12px 16px; margin: 24px 0; }
+
+    /* TOC */
+    .toc { padding: 16px; }
+    .toc ol { margin-left: 14px; }
+    .toc li { font-size: 13px; margin-bottom: 6px; }
+
+    /* Collection + stack grids: single column on mobile */
+    .collection-grid { grid-template-columns: 1fr; gap: 10px; }
+    .stack-grid { grid-template-columns: 1fr; gap: 12px; }
+
+    /* Myth table: stack into rows on small screens */
+    .myth-table, .myth-table thead, .myth-table tbody,
+    .myth-table th, .myth-table td, .myth-table tr { display: block; width: 100%; }
+    .myth-table thead tr { display: none; }
+    .myth-table td {
+      width: 100%;
+      padding: 10px 12px;
+      border-bottom: none;
+    }
+    .myth-table td:first-child {
+      background: #fff8f8;
+      border-top: 3px solid #f0b0b0;
+      border-radius: 6px 6px 0 0;
+      font-style: italic;
+      color: #7a3030;
+    }
+    .myth-table td:first-child::before {
+      content: "Myth";
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #cc4444;
+      margin-bottom: 4px;
+    }
+    .myth-table td:last-child {
+      background: #f7fbf7;
+      border-bottom: 3px solid #a8c8ab;
+      border-radius: 0 0 6px 6px;
+      margin-bottom: 14px;
+      color: #2d4a2f;
+    }
+    .myth-table td:last-child::before {
+      content: "Reality";
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2e5631;
+      margin-bottom: 4px;
+    }
+
+    /* Reg table: horizontal scroll wrapper */
+    .reg-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+    .reg-table-wrap .reg-table { margin: 0; min-width: 560px; }
+
+    /* Checklist */
+    .checklist li { font-size: 14px; padding: 10px 12px; }
+
+    /* Decision tree */
+    .dt-node { font-size: 14px; padding: 12px 14px; }
+    .dt-yes, .dt-no, .dt-outcome { padding-left: 20px; }
+
+    /* CTA */
+    .cta-block { padding: 24px 18px; border-radius: 8px; }
+    .cta-block h2 { font-size: 20px; }
+    .cta-block p { font-size: 14px; }
+    .cta-btn { font-size: 14px; padding: 11px 24px; }
+
+    /* Expert badges */
+    .expert-badge { font-size: 10px; padding: 3px 8px; }
+
+    /* Featured section cards: full width */
+    .featured-grid { grid-template-columns: 1fr; }
+
+    /* Highlight box */
+    .highlight-box { padding: 16px 18px; }
+
+    /* Note box */
+    .note { font-size: 12px; padding: 10px 14px; }
+
+    /* Divider spacing */
+    .divider { margin: 36px 0; }
+  }
 </style>
 </head>
 <body>
@@ -303,6 +419,7 @@
     <li><a href="#coa">How to read a Certificate of Analysis</a></li>
     <li><a href="#stacking">Advanced stacking: practitioner-tier protocols</a></li>
     <li><a href="#explore">Explore the full range</a></li>
+    <li><a href="#featured">Wallaby Wellness around the web</a></li>
   </ol>
 </div>
 
@@ -473,6 +590,7 @@
 
 <p>This is not a criticism of the system   it reflects how the TGA appropriately scales its resources. But it does mean that for the supplement category, the brand's own sourcing rigour and third-party testing practices matter far more than any government approval number alone.</p>
 
+<div class="reg-table-wrap">
 <table class="reg-table">
   <thead>
     <tr>
@@ -519,6 +637,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <h3>The Grey Market Import Problem Australians Don't Know About</h3>
 
@@ -808,6 +927,65 @@
     <strong><a href="https://wallabywellness.com.au/collections/protein-bars" target="_blank">Protein Bars</a></strong>
     <p>Clean, functional snacks with real ingredients for active, health-conscious lifestyles.</p>
   </div>
+</div>
+
+<hr class="divider">
+
+<!-- FEATURED SECTION -->
+<h2 id="featured">Wallaby Wellness Around the Web</h2>
+
+<p>Wallaby Wellness is featured and listed across a number of trusted health, business, and community platforms. Find us, follow our updates, and connect through the profiles below.</p>
+
+<div class="featured-grid">
+
+  <a href="https://www.storeboard.com/wallabywellness" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🏢</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">Storeboard</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Business profile</div>
+    </div>
+  </a>
+
+  <a href="https://www.findhealthclinics.com/AU/Sydney/109134140609361/Wallaby-Wellness" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🏥</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">Find Health Clinics</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Health directory listing</div>
+    </div>
+  </a>
+
+  <a href="https://wallabywellness.livejournal.com/profile/" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#fff3e0;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📔</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">LiveJournal</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Community profile</div>
+    </div>
+  </a>
+
+  <a href="https://gravatar.com/famous9a46f59ce9" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#f3e5f5;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">👤</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">Gravatar</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Identity profile</div>
+    </div>
+  </a>
+
+  <a href="https://www.tumblr.com/wallabywellness" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#e8eaf6;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">✍️</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">Tumblr</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Blog &amp; community</div>
+    </div>
+  </a>
+
+  <a href="https://www.scribd.com/user/978182376/Wallaby-Wellness" target="_blank" rel="nofollow" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:16px 18px;text-decoration:none;color:#1a1a18;">
+    <div style="width:40px;height:40px;border-radius:8px;background:#fce4ec;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📄</div>
+    <div>
+      <div style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a1a18;">Scribd</div>
+      <div style="font-family:Arial,sans-serif;font-size:12px;color:#6a6a5a;margin-top:2px;">Documents &amp; publications</div>
+    </div>
+  </a>
+
 </div>
 
 <div class="cta-block">
